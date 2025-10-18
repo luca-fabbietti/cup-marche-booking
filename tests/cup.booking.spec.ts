@@ -10,4 +10,5 @@ test('booking', async ({ page }) => {
   await page.waitForSelector('#selectAreaVastaId');
   await page.locator('#selectAreaVastaId').selectOption('MARCHE');
   await page.getByRole('button', { name: 'PRENOTA LE PRESTAZIONI' }).click();
+  await expect(page.getByRole('cell', { name: 'Struttura Erogante' })).toBeVisible();
 });
